@@ -13,7 +13,7 @@ import Reveal from '../components/shared/Reveal';
 import { Loading, DemoBanner } from '../components/shared/StateViews';
 
 export default function About() {
-  usePageMeta('Nosotros', 'La historia, la identidad y los invitados de El Sótanoo.');
+  usePageMeta('Nosotros', 'La historia, la identidad y los invitados de El Sótano.');
   const { isAdmin } = useAuth();
   const { data, loading, isFallback } = useContent('about', 'guests');
   if (loading) return <Loading />;

@@ -19,7 +19,7 @@ export default function Events() {
   const { archive } = useMemo(() => splitEvents(data.events?.items, data.upcoming?.items), [data]);
   const current = slug ? archive.find((e) => (e.slug || e.id) === slug) : null;
 
-  usePageMeta(current ? current.name : 'Eventos', current ? current.description : 'Archivo de la actividad cultural de El Sótanoooo.');
+  usePageMeta(current ? current.name : 'Eventos', current ? current.description : 'Archivo de la actividad cultural de El Sótano.');
   if (loading) return <Loading />;
 
   if (slug) {
