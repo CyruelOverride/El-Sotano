@@ -9,6 +9,7 @@ export const NAV = [
   { to: '/eventos', label: 'Eventos' },
   { to: '/resto', label: 'Resto' },
   { to: '/proximamente', label: 'Próximamente' },
+  { to: '/login', label: 'Login' },
 ];
 
 export default function Navbar() {
