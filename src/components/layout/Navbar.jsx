@@ -26,7 +26,7 @@ export default function Navbar() {
 
   return (
     <header className="navbar">
-      <Link to="/" className="navbar__logo" aria-label="ElSotano — inicio"><Logo /></Link>
+      <Link to="/" className="navbar__logo" aria-label="El Sótano — inicio"><Logo /></Link>
 
       <nav className="navbar__links" aria-label="Principal">
         {NAV.map((n, i) => (

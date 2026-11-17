@@ -11,7 +11,7 @@ export default function Footer() {
 
   return (
     <footer className="footer">
-      <div className="footer__big display" aria-hidden="true">ElSotano</div>
+      <div className="footer__big display" aria-hidden="true">El Sótano</div>
       <div className="footer__grid">
         <div>
           <Logo size="lg" />
@@ -36,7 +36,7 @@ export default function Footer() {
         </div>
       </div>
       <AdminBar className="admin-bar--row"><SiteEditButton site={site} /></AdminBar>
-      <p className="footer__legal mono">© {new Date().getFullYear()} ElSotano</p>
+      <p className="footer__legal mono">© {new Date().getFullYear()} El Sótano</p>
     </footer>
   );
 }

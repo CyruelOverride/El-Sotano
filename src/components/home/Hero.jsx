@@ -9,7 +9,7 @@ import { merge } from '../../services/contentActions';
 export default function Hero({ hero }) {
   return (
     <section className="hero">
-      <Photo src={hero?.image} alt="ElSotano" label="HERO — foto del bar" className="hero__photo" eager />
+      <Photo src={hero?.image} alt="El Sótano" label="HERO — foto del bar" className="hero__photo" eager />
       <div className="hero__content">
         <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5 }}>
           <h1 className="hero__logo"><Logo size="xl" /></h1>

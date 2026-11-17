@@ -14,7 +14,7 @@ import Marquee from '../components/shared/Marquee';
 import { Loading, DemoBanner } from '../components/shared/StateViews';
 
 export default function Home() {
-  usePageMeta('Inicio', 'ElSotano: bar con restaurante, música en vivo y cultura underground.');
+  usePageMeta('Inicio', 'El Sotano: bar con restaurante, música en vivo y cultura underground.');
   const { data, loading, isFallback } = useContent('home', 'events', 'upcoming', 'gallery');
 
   const { archive, next } = useMemo(() => splitEvents(data.events?.items, data.upcoming?.items), [data]);

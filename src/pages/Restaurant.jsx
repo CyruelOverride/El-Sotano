@@ -13,7 +13,7 @@ import { merge } from '../services/contentActions';
 import { Loading, DemoBanner } from '../components/shared/StateViews';
 
 export default function Restaurant() {
-  usePageMeta('Resto', 'La propuesta gastronómica y el menú de ElSotano.');
+  usePageMeta('Resto', 'La propuesta gastronómica y el menú de El Sótano.');
   const { isAdmin } = useAuth();
   const { data, loading, isFallback } = useContent('restaurant', 'home');
   if (loading) return <Loading />;

@@ -69,10 +69,10 @@ export const fallbackData = {
   events: {
     ...demo,
     items: [
-      { id: 'e1', slug: 'noche-demo-uno', name: 'Noche Demo Uno', date: '2025-03-15', category: 'LIVE', type: 'Recital', location: 'ElSotano', description: 'Evento de demostración. Reemplazar por contenido real desde el servidor.', image: null, images: [], guests: ['Banda de Ejemplo'], featured: true, participation: false },
-      { id: 'e2', slug: 'noche-demo-dos', name: 'Noche Demo Dos', date: '2025-06-21', category: 'LIVE', type: 'Fiesta', location: 'ElSotano', description: 'Evento de demostración. Reemplazar por contenido real desde el servidor.', image: null, images: [], guests: ['DJ Demostración'], featured: true, participation: false },
-      { id: 'e3', slug: 'ciclo-demo', name: 'Ciclo Demo', date: '2024-09-07', category: 'ARCHIVE', type: 'Ciclo', location: 'ElSotano', description: 'Evento de demostración. Reemplazar por contenido real desde el servidor.', image: null, images: [], guests: ['Dúo Placeholder'], featured: true, participation: false },
-      { id: 'e4', slug: 'cena-demo', name: 'Cena Demo', date: '2024-05-18', category: 'FOOD', type: 'Gastronómico', location: 'ElSotano', description: 'Evento de demostración. Reemplazar por contenido real desde el servidor.', image: null, images: [], guests: [], featured: false, participation: false },
+      { id: 'e1', slug: 'noche-demo-uno', name: 'Noche Demo Uno', date: '2025-03-15', category: 'LIVE', type: 'Recital', location: 'El Sótano', description: 'Evento de demostración. Reemplazar por contenido real desde el servidor.', image: null, images: [], guests: ['Banda de Ejemplo'], featured: true, participation: false },
+      { id: 'e2', slug: 'noche-demo-dos', name: 'Noche Demo Dos', date: '2025-06-21', category: 'LIVE', type: 'Fiesta', location: 'El Sótano', description: 'Evento de demostración. Reemplazar por contenido real desde el servidor.', image: null, images: [], guests: ['DJ Demostración'], featured: true, participation: false },
+      { id: 'e3', slug: 'ciclo-demo', name: 'Ciclo Demo', date: '2024-09-07', category: 'ARCHIVE', type: 'Ciclo', location: 'El Sótano', description: 'Evento de demostración. Reemplazar por contenido real desde el servidor.', image: null, images: [], guests: ['Dúo Placeholder'], featured: true, participation: false },
+      { id: 'e4', slug: 'cena-demo', name: 'Cena Demo', date: '2024-05-18', category: 'FOOD', type: 'Gastronómico', location: 'El Sótano', description: 'Evento de demostración. Reemplazar por contenido real desde el servidor.', image: null, images: [], guests: [], featured: false, participation: false },
       { id: 'e5', slug: 'festival-demo', name: 'Festival Demo', date: '2024-11-30', category: 'LIVE', type: 'Festival', location: 'Sede externa de ejemplo', description: 'Participación de demostración en un festival externo.', image: null, images: [], guests: [], featured: false, participation: true },
       { id: 'e6', slug: 'encuentro-demo', name: 'Encuentro Demo', date: '2023-10-12', category: 'ARCHIVE', type: 'Encuentro', location: 'Sede externa de ejemplo', description: 'Participación de demostración en un encuentro externo.', image: null, images: [], guests: [], featured: false, participation: true },
     ],
@@ -81,7 +81,7 @@ export const fallbackData = {
   restaurant: {
     ...demo,
     intro: { title: 'Resto', text: 'Cocina de sótano: intensa, generosa y sin solemnidad.' },
-    proposal: { title: 'Nuestra propuesta', text: 'Texto de demostración: acá se describe la cocina, las especialidades y la forma de comer en ElSotano.' },
+    proposal: { title: 'Nuestra propuesta', text: 'Texto de demostración: acá se describe la cocina, las especialidades y la forma de comer en El Sótano.' },
     categories: [
       { id: 'c1', name: 'Para picar' },
       { id: 'c2', name: 'Principales' },

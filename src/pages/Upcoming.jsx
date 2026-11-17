@@ -11,7 +11,7 @@ import Marquee from '../components/shared/Marquee';
 import { Loading, DemoBanner } from '../components/shared/StateViews';
 
 export default function Upcoming() {
-  usePageMeta('Próximamente', 'Agenda de los próximos eventos de ElSotano.');
+  usePageMeta('Próximamente', 'Agenda de los próximos eventos de El Sótano.');
   const { data, loading, isFallback } = useContent('upcoming', 'events');
   const { next } = useMemo(() => splitEvents(data.events?.items, data.upcoming?.items), [data]);
   if (loading) return <Loading />;
