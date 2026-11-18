@@ -9,7 +9,7 @@ export const fallbackData = {
   home: {
     ...demo,
     site: {
-      name: 'El Sotano',
+      name: 'El Sótano',
       address: 'Dirección a confirmar',
       email: 'contacto@elsotano.example',
       phone: '',
@@ -38,7 +38,7 @@ export const fallbackData = {
     ...demo,
     who: {
       title: 'Un bar bajo tierra',
-      text: 'El Sotano es un bar con restaurante donde la música manda. Un lugar de encuentro para bandas, público y cocina, pensado como un fanzine en tres dimensiones.',
+      text: 'El Sótano es un bar con restaurante donde la música manda. Un lugar de encuentro para bandas, público y cocina, pensado como un fanzine en tres dimensiones.',
     },
     history: [
       { year: 'Origen', title: 'Un sótano, una idea', text: 'Texto de demostración: acá va el relato de cómo empezó el espacio.' },
