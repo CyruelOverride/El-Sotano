@@ -7,6 +7,7 @@ import { merge } from '../services/contentActions';
 import HistorySection from '../components/about/HistorySection';
 import IdentitySection from '../components/about/IdentitySection';
 import GuestSection from '../components/about/GuestSection';
+import Banner from '../components/shared/Banner';
 import SectionTitle from '../components/shared/SectionTitle';
 import ImageGallery from '../components/shared/ImageGallery';
 import Reveal from '../components/shared/Reveal';
@@ -30,8 +31,10 @@ export default function About() {
           <EditButton title="Editar presentación" label="Texto" fields={whoFields} value={about.who} onSave={(v) => merge('about', 'who', v)} />
         </AdminBar>
       </section>
+      <Banner slot="about-1" label="Banner nosotros 1" />
       <HistorySection items={about.history} />
       <IdentitySection identity={about.identity} />
+      <Banner slot="about-2" label="Banner nosotros 2" />
       <GuestSection guests={data.guests?.items} />
       {(about.space?.length > 0 || isAdmin) && (
         <section className="section">

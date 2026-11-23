@@ -6,6 +6,7 @@ import FeaturedUpcoming from '../components/upcoming/FeaturedUpcoming';
 import UpcomingList from '../components/upcoming/UpcomingList';
 import { AdminBar } from '../components/admin/AdminControls';
 import { EventAddButton } from '../components/admin/EventAdmin';
+import Banner from '../components/shared/Banner';
 import SectionTitle from '../components/shared/SectionTitle';
 import Marquee from '../components/shared/Marquee';
 import { Loading, DemoBanner } from '../components/shared/StateViews';
@@ -26,6 +27,7 @@ export default function Upcoming() {
         <h1 className="display">Próximamente</h1>
         <AdminBar><EventAddButton section="upcoming" /></AdminBar>
       </section>
+      <Banner slot="upcoming-1" label="Banner próximamente" />
       {next.length === 0 ? (
         <section className="section"><p className="lead">No hay eventos confirmados por ahora. Volvé pronto.</p></section>
       ) : (

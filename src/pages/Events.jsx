@@ -9,6 +9,7 @@ import EventDetail from '../components/events/EventDetail';
 import EventCard from '../components/events/EventCard';
 import { AdminBar } from '../components/admin/AdminControls';
 import { EventAddButton } from '../components/admin/EventAdmin';
+import Banner from '../components/shared/Banner';
 import SectionTitle from '../components/shared/SectionTitle';
 import ImageGallery from '../components/shared/ImageGallery';
 import { Loading, DemoBanner } from '../components/shared/StateViews';
@@ -45,6 +46,7 @@ export default function Events() {
         <h1 className="display">Eventos</h1>
         <AdminBar><EventAddButton section="events" /></AdminBar>
       </section>
+      <Banner slot="events-1" label="Banner eventos 1" />
       {featured.length > 0 && (
         <section className="section">
           <SectionTitle number={1} label="Destacados">Eventos destacados</SectionTitle>
@@ -55,6 +57,7 @@ export default function Events() {
         <SectionTitle number={2} label="Cronología">Archivo de eventos</SectionTitle>
         <EventArchive events={archive} />
       </section>
+      <Banner slot="events-2" label="Banner eventos 2" />
       {participations.length > 0 && (
         <section className="section">
           <SectionTitle number={3} label="Afuera">Participaciones</SectionTitle>

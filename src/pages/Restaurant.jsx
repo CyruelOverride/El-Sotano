@@ -3,6 +3,7 @@ import { usePageMeta } from '../hooks/usePageMeta';
 import { useAuth } from '../hooks/useAuth';
 import RestaurantHero from '../components/restaurant/RestaurantHero';
 import MenuSection from '../components/restaurant/MenuSection';
+import Banner from '../components/shared/Banner';
 import SectionTitle from '../components/shared/SectionTitle';
 import ImageGallery from '../components/shared/ImageGallery';
 import Reveal from '../components/shared/Reveal';
@@ -24,6 +25,7 @@ export default function Restaurant() {
     <>
       <DemoBanner show={isFallback} />
       <RestaurantHero intro={r.intro} />
+      <Banner slot="resto-1" label="Banner resto 1" />
       {(r.proposal || isAdmin) && (
         <section className="section proposal">
           <SectionTitle number={1} label="Cocina">{r.proposal?.title}</SectionTitle>
@@ -33,6 +35,7 @@ export default function Restaurant() {
           </AdminBar>
         </section>
       )}
+      <Banner slot="resto-2" label="Banner resto 2" />
       <MenuSection categories={r.categories} dishes={r.dishes} />
       {(r.gallery?.length > 0 || isAdmin) && (
         <section className="section">
