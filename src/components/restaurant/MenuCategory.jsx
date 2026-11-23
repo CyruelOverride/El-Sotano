@@ -4,8 +4,7 @@ import { useAuth } from '../../hooks/useAuth';
 import { useContent } from '../../hooks/useContent';
 import { AddButton, AdminBar, DeleteButton, EditButton } from '../admin/AdminControls';
 import { categoryFields, dishFields } from '../admin/fields';
-import { upsertById } from '../../services/contentActions';
-import { mutate, uid } from '../../services/contentService';
+import { removeById, upsertById } from '../../services/contentActions';
 
 export default function MenuCategory({ category, dishes, index }) {
   const { isAdmin } = useAuth();
@@ -26,17 +25,14 @@ export default function MenuCategory({ category, dishes, index }) {
           title={`Eliminar categoría: ${category.name}`}
           label="Categoría"
           message={`Se eliminará la categoría "${category.name}" y sus ${dishes.length} plato(s). Esta acción no se puede deshacer.`}
-          onConfirm={() => mutate('restaurant', (d) => {
-            d.categories = d.categories.filter((c) => c.id !== category.id);
-            d.dishes = d.dishes.filter((x) => x.categoryId !== category.id);
-          })}
+          onConfirm={() => removeById('restaurant', 'categories', category.id)}
         />
         <AddButton
           title={`Nuevo plato en ${category.name}`}
           label="Agregar plato"
           fields={dishFields(data.restaurant?.categories)}
           initial={{ type: 'COMIDA', categoryId: category.id }}
-          onSave={(v) => upsertById('restaurant', 'dishes', { ...v, price: v.price || null, id: uid('d') })}
+          onSave={(v) => upsertById('restaurant', 'dishes', { ...v, price: v.price || null })}
         />
       </AdminBar>
       <div className="mcat__dishes">{dishes.map((d) => <DishCard key={d.id} dish={d} />)}</div>

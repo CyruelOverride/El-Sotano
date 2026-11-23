@@ -64,6 +64,16 @@ a:hover .photo__shade, button:hover .photo__shade { opacity: .1; }
 .logo__l { display: inline-block; padding: .05em .06em; }
 .logo__l--dark { background: var(--white); color: var(--black); }
 .logo__l--light { background: var(--black); color: var(--white); box-shadow: inset 0 0 0 1px var(--white); }
+.logo { align-items: center; }
+.logo__sp { display: inline-block; width: .3em; }
+.logo__f--fraktur { font-family: 'UnifrakturCook', serif; font-weight: 700; }
+.logo__f--bodoni { font-family: 'Bodoni Moda', serif; font-weight: 900; }
+.logo__f--playfair { font-family: 'Playfair Display', serif; font-weight: 900; font-style: italic; }
+.logo__f--anton { font-family: var(--f-display); }
+.logo__f--geometric { font-family: 'Montserrat', sans-serif; font-weight: 800; }
+.logo__l--outline { color: transparent; -webkit-text-stroke: .045em currentColor; }
+.logo__l--dark.logo__l--outline { -webkit-text-stroke-color: var(--black); }
+.logo__l--light.logo__l--outline { -webkit-text-stroke-color: var(--white); }
 .logo--md { font-size: 1.7rem; }
 .logo--lg { font-size: 2.4rem; }
 .logo--xl { font-size: clamp(2.6rem, 14vw, 10rem); }

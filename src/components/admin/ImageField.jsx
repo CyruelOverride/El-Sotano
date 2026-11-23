@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { admin } from '../../services/api';
 
 const MAX_BYTES = 3 * 1024 * 1024;
 
-// Imagen por URL o subiendo un archivo (queda como data URL en memoria hasta que exista el backend).
+// Imagen por URL o subiendo un archivo (el backend la valida y devuelve la URL a guardar).
 export function ImageField({ value, onChange, id }) {
   const [error, setError] = useState('');
+  const [busy, setBusy] = useState(false);
 
   const onFile = (e) => {
     const file = e.target.files?.[0];
@@ -14,7 +16,16 @@ export function ImageField({ value, onChange, id }) {
     if (file.size > MAX_BYTES) return setError('La imagen supera los 3 MB.');
     setError('');
     const reader = new FileReader();
-    reader.onload = () => onChange(reader.result);
+    reader.onload = async () => {
+      setBusy(true);
+      try {
+        onChange((await admin.upload(reader.result)).url);
+      } catch (err) {
+        setError(err.message || 'No se pudo subir la imagen.');
+      } finally {
+        setBusy(false);
+      }
+    };
     reader.onerror = () => setError('No se pudo leer el archivo.');
     reader.readAsDataURL(file);
   };
@@ -34,7 +45,7 @@ export function ImageField({ value, onChange, id }) {
       />
       <div className="imgfield__actions">
         <label className="admin-btn admin-btn--solid">
-          Subir archivo
+          {busy ? 'Subiendo…' : 'Subir archivo'}
           <input type="file" accept="image/*" onChange={onFile} hidden />
         </label>
         {value && <button type="button" className="admin-btn" onClick={() => onChange(null)}>Quitar</button>}

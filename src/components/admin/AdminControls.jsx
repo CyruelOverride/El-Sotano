@@ -72,14 +72,17 @@ function Field({ field, value, onChange }) {
 function FormModal({ title, fields, initial, submitLabel = 'Guardar', onSubmit, onClose }) {
   const [values, setValues] = useState(() => toForm(fields, initial));
   const [error, setError] = useState('');
+  const [busy, setBusy] = useState(false);
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
+    setBusy(true);
     try {
-      onSubmit(fromForm(fields, values));
+      await onSubmit(fromForm(fields, values));
       onClose();
     } catch (err) {
       setError(err.message || 'No se pudo guardar.');
+      setBusy(false);
     }
   };
 
@@ -91,7 +94,7 @@ function FormModal({ title, fields, initial, submitLabel = 'Guardar', onSubmit, 
       footer={(
         <>
           <button type="button" className="btn" onClick={onClose}>Cancelar</button>
-          <button type="submit" form="admin-form" className="btn btn--invert">{submitLabel}</button>
+          <button type="submit" form="admin-form" className="btn btn--invert" disabled={busy}>{busy ? 'Guardando…' : submitLabel}</button>
         </>
       )}
     >
@@ -106,6 +109,18 @@ function FormModal({ title, fields, initial, submitLabel = 'Guardar', onSubmit, 
 }
 
 function ConfirmModal({ title, message, confirmLabel = 'Eliminar', onConfirm, onClose }) {
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState('');
+  const confirm = async () => {
+    setBusy(true);
+    try {
+      await onConfirm();
+      onClose();
+    } catch (err) {
+      setError(err.message || 'No se pudo eliminar.');
+      setBusy(false);
+    }
+  };
   return (
     <Modal
       title={title}
@@ -113,11 +128,12 @@ function ConfirmModal({ title, message, confirmLabel = 'Eliminar', onConfirm, on
       footer={(
         <>
           <button type="button" className="btn" onClick={onClose}>Cancelar</button>
-          <button type="button" className="btn btn--danger" onClick={() => { onConfirm(); onClose(); }}>{confirmLabel}</button>
+          <button type="button" className="btn btn--danger" onClick={confirm} disabled={busy}>{busy ? 'Eliminando…' : confirmLabel}</button>
         </>
       )}
     >
       <p>{message}</p>
+      {error && <p className="field__error" role="alert">{error}</p>}
     </Modal>
   );
 }
